@@ -1,0 +1,19 @@
+{
+  "name": "space-app",
+  "version": "1.0.0",
+  "description": "playing with dev toolchains",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pulamusic/space-app.git"
+  },
+  "author": "Jim Carroll",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pulamusic/space-app/issues"
+  },
+  "homepage": "https://github.com/pulamusic/space-app#readme"
+}
