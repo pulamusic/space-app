@@ -8,9 +8,11 @@ function getDate(d = new Date()) {
   return d.toJSON().split('T')[0];
 }
 
+const apiKey = '0nlz09JEsY6jwVvmrAoiky1CuDUEUoufDHr9C7dB';
+
 const fetchData = () =>
   fetch(
-    `https://api.nasa.gov/neo/rest/v1/feed?start_date=${getDate()}&api_key=DEMO_KEY`
+    `https://api.nasa.gov/neo/rest/v1/feed?start_date=${getDate()}&api_key=${apiKey}`
   ).then((res) => res.json());
 
 export default function App() {
@@ -42,7 +44,7 @@ export default function App() {
     <div>
       <p>
         {format(addDays(new Date(), 1), 'EEEE d-MMM')} there will be{' '}
-        <strong>{results.length}</strong> near misses
+        <strong>{results.length}</strong> flying pigs
       </p>
       <hr></hr>
       {results
