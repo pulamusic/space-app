@@ -18,7 +18,7 @@ html {
 
 body {
   position: relative;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 20px;
   font-family: 'Source Code Pro', monospace;
@@ -70,8 +70,14 @@ a {
   color: #f47d20;
 }
 
+header {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.4em 1.4em;
+  border-radius: 1em;
+}
+
 header h2 {
-  margin-left: 0.8em;
+  margin-left: 1.2em;
   padding-bottom: 1.4em;
 }
 

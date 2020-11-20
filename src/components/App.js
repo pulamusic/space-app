@@ -43,8 +43,8 @@ export default function App() {
   return (
     <div>
       <p>
-        {format(addDays(new Date(), 1), 'EEEE d-MMM')} there will be{' '}
-        <strong>{results.length}</strong> <strike>flying pigs</strike> potentially hazardous asteroids
+        On <strong>{format(addDays(new Date(), 1), 'EEEE, MMM d, Y')}</strong> there will be{' '}
+        <strong>{results.length}</strong> <strike>flying pigs</strike> potentially hazardous asteroids passing near the Earth.
       </p>
       <hr></hr>
       {results
