@@ -79,6 +79,11 @@ header h2 {
   padding: 1em;
 }
 
+.icon {
+  /*position: absolute;*/
+  baseline-shift: -2em;
+}
+
 .more {
   font-size: 80%;
 }
