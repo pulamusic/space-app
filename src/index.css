@@ -96,13 +96,35 @@ header {
   box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.2);
   margin: 0 0 2em 0;
   transition: all 3s ease-in-out;
+  display: flex;
+
+  @media only screen and (width < 48em) {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 header img {
   margin: 0 auto;
-  display: block;
-  height: auto;
-  width: 25%;
+  display: none;
+  height: 0;
+  width: 0;
+
+  @media only screen and (width > 48em) {
+    display: block;
+    height: auto;
+    width: 25%;
+  }
+}
+
+header img, h1, h2 {
+  display: inline-block;
+}
+
+header h1 {
+  @media only screen and (width < 48em) {
+    margin: 0 auto;
+  }
 }
 
 header:hover {
@@ -112,6 +134,11 @@ header:hover {
 header h2 {
   margin-left: 1.2em;
   padding-bottom: 1.4em;
+
+  @media only screen and (width < 48em) {
+    margin-left: 0.6em;
+    padding-bottom: 0.2em;
+  }
 }
 
 footer {
