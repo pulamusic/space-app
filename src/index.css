@@ -4,16 +4,30 @@ body {
   margin: 0;
 }
 
+/* 367px */
+
 html {
   background-color: #270237;
   /* background-image: url(/img/stars.svg), url(/img/asteriod2.svg),
     url(/img/asteriod1.svg), url(/img/bg.svg); */
-  background-image: linear-gradient(to bottom, #270237, #1b3454, #2d4a69, #3f607f, #537895);
-  /*url(/img/stars.svg), url(/img/bg.svg);*/
-  background-repeat: repeat, no-repeat;
-  background-size: auto, cover;
-  background-position: bottom, bottom;
-  min-height: 100%;
+
+  &:before {
+    content: '';
+    position: fixed;
+    background-position: bottom, bottom;
+    background-image: url(/img/stars.svg), url(/img/bg.svg), linear-gradient(to bottom, #270237, #1b3454, #2d4a69, #3f607f, #537895);
+    opacity: 0.6;
+    background-size: cover;
+    /*min-height: 100%;*/
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+
+  }
 }
 
 body {
@@ -21,10 +35,9 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Source Code Pro', monospace;
-  /*font-family: 'Ubuntu Mono', Menlo, Consolas, Monaco, Liberation Mono,
-    Lucida Console, monospace;*/
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
+  font-weight: 300;
 
   /* background: #212121; */
   color: #dfdfdf;
@@ -62,18 +75,38 @@ h2 {
   margin-top: 40px;
 }
 
+h1, h2, h3, h4 {
+  font-family: 'Source Code Pro', monospace;
+  position: relative;
+}
+
 strong {
   color: white;
 }
 
 a {
-  color: #f47d20;
+  color: #f2aa74;
+  text-decoration: none;
 }
 
 header {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 0.4em 1.4em;
   border-radius: 1em;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.2);
+  margin: 0 0 2em 0;
+  transition: all 3s ease-in-out;
+}
+
+header img {
+  margin: 0 auto;
+  display: block;
+  height: auto;
+  width: 25%;
+}
+
+header:hover {
+  transform: scale(1.05);
 }
 
 header h2 {
@@ -81,13 +114,28 @@ header h2 {
   padding-bottom: 1.4em;
 }
 
+footer {
+  text-align: center;
+  margin: 2em 0;
+}
+
 .container {
   padding: 1em;
 }
 
-.icon {
-  /*position: absolute;*/
-  baseline-shift: -2em;
+.name {
+  text-align: center;
+  font-weight: 800;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.2);
+  padding: 0.6em;
+  transition: all 3s ease-in-out;
+  margin: 0.5em 10em;
+  background-color: rgba(119, 105, 77, 0.5);
+  border-radius: 0.3em;
+}
+
+.name:hover {
+  transform: scale(1.05);
 }
 
 .more {
@@ -97,7 +145,14 @@ header h2 {
 .is-hazard .hazard {
   color: red;
   font-weight: bold;
-  animation: hazard 1s infinite;
+  animation: hazard 2s infinite;
+  padding: 2px 4px;
+}
+
+.no-hazard .hazard {
+  color: green;
+  font-weight: bold;
+  animation: noHazard 3s infinite;
   padding: 2px 4px;
 }
 
@@ -119,8 +174,73 @@ hr,
     background: red;
   }
 
-  51% {
+  100% {
     color: red;
     background: inherit;
   }
+}
+
+@keyframes noHazard {
+  0% {
+    color: green;
+    background: inherit;
+  }
+
+  50% {
+    color: inherit;
+    background: green;
+  }
+
+  100% {
+    color: green;
+    background: inherit;
+  }
+}
+
+/* ======== Tooltip styling ======== */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 15em;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 0.6em;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 15%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }

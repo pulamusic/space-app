@@ -12,7 +12,7 @@ export default function Orbital({
     <div
       className={is_potentially_hazardous_asteroid ? 'is-hazard' : 'no-hazard'}
     >
-      <h2>{name.replace(/[()]/g, '')}</h2>
+      <h2 className="name">{name.replace(/[()]/g, '')}</h2>
       <p>
         Potentially hazardous?{' '}
         <Hazard yes={is_potentially_hazardous_asteroid} />
