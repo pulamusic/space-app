@@ -91,10 +91,10 @@ a {
 
 header {
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 0.4em 1.4em;
+  padding: 0.4em 1em;
   border-radius: 1em;
   box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.2);
-  margin: 0 0 2em 0;
+  margin: 0;
   transition: all 3s ease-in-out;
   display: flex;
 
@@ -107,13 +107,14 @@ header {
 header img {
   margin: 0 auto;
   display: none;
-  height: 0;
   width: 0;
+  height: 0;
 
   @media only screen and (width > 48em) {
     display: block;
-    height: auto;
-    width: 25%;
+    height: 100%;
+    width: auto;
+    margin: auto;
   }
 }
 
@@ -133,7 +134,7 @@ header:hover {
 
 header h2 {
   margin-left: 1.2em;
-  padding-bottom: 1.4em;
+  padding-bottom: 0.8em;
 
   @media only screen and (width < 48em) {
     margin-left: 0.6em;
